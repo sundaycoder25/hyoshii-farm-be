@@ -9,14 +9,14 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")  // Ini akan mengaktifkan CORS untuk semua endpoints
+        registry.addMapping("/**")
                 .allowedOrigins(
-                        "http://localhost:3000",     // Next.js development
-                        "http://localhost:8081"      // Next.js production jika dibutuhkan
+                        "http://localhost:3000",     // Local development
+                        "https://hyoshii-farm-fet.vercel.app"  // Production Vercel deployment
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true)
-                .maxAge(3600); // 1 jam cache untuk pre-flight requests
+                .maxAge(3600);
     }
 }

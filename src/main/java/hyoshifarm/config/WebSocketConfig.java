@@ -21,8 +21,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/ws")
                 .setAllowedOrigins(
-                        "http://localhost:3000",  // Development
-                        "http://localhost:8081"   // Production build
+                        "http://localhost:3000",  // Local development
+                        "https://hyoshii-farm-fet.vercel.app"   // Production Vercel deployment
                 )
                 .withSockJS();
     }
