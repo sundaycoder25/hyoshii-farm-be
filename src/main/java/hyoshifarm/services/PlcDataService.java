@@ -74,4 +74,8 @@ public class PlcDataService {
     public PlcData savePlcData(PlcData data) {
         return plcDataRepository.save(data);
     }
+
+    public List<PlcData> getRecentHistory() {
+        return plcDataRepository.findLast20Records();
+    }
 }
